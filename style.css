@@ -20,9 +20,13 @@
     height: 100%;
     text-align: center;
 }
-.slider-wrapper .images img {
+/* .slider-wrapper .images img {
     display: none;
     height: 100%;
+} */
+
+img{
+  width: 1000px;
 }
 .slider-wrapper .images img.active {
     display: inline-block;
