@@ -14,6 +14,8 @@ var app = new Vue({
 
 
    circle: ['fas fa-circle', 'fas fa-circle','fas fa-circle','fas fa-circle'],
+
+
    // Index per le foto
    photosIdx:0,
    dotIndex:0
@@ -23,11 +25,13 @@ var app = new Vue({
    // Metodo che va avanti quando clicco su next, ma torna alla prima foto dopo l'ultima
    nextPhoto:function(){
      console.log(this.photosIdx);
+     console.log('dot index ' + this.dotIndex);
 
      if(this.photosIdx === this.imgs.length - 1){
        this.photosIdx = 0;
      }else{
        this.photosIdx += 1;
+       this.dotIndex += 1;
      }
    },
 
@@ -39,9 +43,11 @@ var app = new Vue({
 
      }else{
        this.photosIdx -= 1;
+       this.dotIndex -= 1;
      }
+   },
 
-   }
+
  }
 });
 Vue.config.devtools = true;
