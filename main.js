@@ -15,9 +15,16 @@ var app = new Vue({
 
  methods:{
    nextPhoto:function(){
-     this.photosIdx += 1;
+     console.log(this.photosIdx);
+
+     if(this.photosIdx === this.imgs.length - 1){
+       this.photosIdx = 0;
+     }else{
+       this.photosIdx += 1;
+     }
    },
    prevPhoto:function(){
+     console.log(this.photosIdx);
      this.photosIdx -= 1;
    }
  }
