@@ -6,8 +6,8 @@
         <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
         <link rel="stylesheet" href="style.css">
-        
-        
+
+
         <title>Slider</title>
     </head>
     <body>
@@ -22,16 +22,16 @@
                   <div></div>
                 </div>
                 <div class="next" @click="nextPhoto">
-                    <i class="fas fa-angle-right"></i>
+                  <i class="fas fa-angle-right"></i>
                 </div>
                 <div class="nav">
-                    <i v-for="dots in circle" :class="circle"></i>
+                    <i v-for="(dot,i) in circle" :class="findActiveDot(i)"></i>
                 </div>
               </div>
             </div>
           </div>
-      
-        
+
+
         <script src="main.js"></script>
     </body>
 </html>

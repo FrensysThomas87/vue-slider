@@ -13,41 +13,53 @@ var app = new Vue({
    ],
 
 
-   circle: ['fas fa-circle', 'fas fa-circle','fas fa-circle','fas fa-circle'],
-
+   circle: ['fas fa-circle active', 'fas fa-circle','fas fa-circle','fas fa-circle'],
+   color:'blue',
 
    // Index per le foto
    photosIdx:0,
-   dotIndex:0
+
  },
 
  methods:{
    // Metodo che va avanti quando clicco su next, ma torna alla prima foto dopo l'ultima
    nextPhoto:function(){
-     console.log(this.photosIdx);
-     console.log('dot index ' + this.dotIndex);
+
 
      if(this.photosIdx === this.imgs.length - 1){
        this.photosIdx = 0;
+       i = 0;
+
      }else{
        this.photosIdx += 1;
-       this.dotIndex += 1;
+       i += 1;
+       console.log('i vale ' + i);
+       console.log(this.photosIdx);
      }
    },
 
    // Metodo che va indietro quando clicco su prev, ma va all'ultima se sono sulla prima
    prevPhoto:function(){
-     console.log(this.photosIdx);
+
+
      if(this.photosIdx === 0){
        this.photosIdx = this.imgs.length - 1;
-
+       i = this.imgs.length - 1;
      }else{
        this.photosIdx -= 1;
-       this.dotIndex -= 1;
+       i -= 1;
+       console.log('i vale ' + i);
+       console.log(this.photosIdx);
      }
    },
 
-
- }
+   findActiveDot:function(i){
+     if(i === this.photosIdx){
+        return 'fas fa-circle active';
+     }else{
+      return 'fas fa-circle';
+     }
+   }
+}
 });
 Vue.config.devtools = true;
