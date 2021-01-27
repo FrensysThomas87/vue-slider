@@ -25,7 +25,12 @@ var app = new Vue({
    },
    prevPhoto:function(){
      console.log(this.photosIdx);
-     this.photosIdx -= 1;
+     if(this.photosIdx === 0){
+       this.photosIdx = this.imgs.length - 1;
+     }else{
+       this.photosIdx -= 1;
+     }
+
    }
  }
 });
