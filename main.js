@@ -12,21 +12,15 @@ var app = new Vue({
      'https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg'
    ],
 
-
-
-   color:'blue',
-
-   // Index per le foto
+ // Index per le foto
    photosIdx:0,
-   isActive:false
+
 
  },
 
  methods:{
    // Metodo che va avanti quando clicco su next, ma torna alla prima foto dopo l'ultima
    nextPhoto:function(){
-
-
      if(this.photosIdx === this.imgs.length - 1){
        this.photosIdx = 0;
        i = 0;
