@@ -13,11 +13,12 @@ var app = new Vue({
    ],
 
 
-   circle: ['fas fa-circle active', 'fas fa-circle','fas fa-circle','fas fa-circle'],
+
    color:'blue',
 
    // Index per le foto
    photosIdx:0,
+   isActive:false
 
  },
 
@@ -41,7 +42,6 @@ var app = new Vue({
    // Metodo che va indietro quando clicco su prev, ma va all'ultima se sono sulla prima
    prevPhoto:function(){
 
-
      if(this.photosIdx === 0){
        this.photosIdx = this.imgs.length - 1;
        i = this.imgs.length - 1;
@@ -55,10 +55,14 @@ var app = new Vue({
 
    findActiveDot:function(i){
      if(i === this.photosIdx){
-        return 'fas fa-circle active';
+      return 'fas fa-circle active';
      }else{
       return 'fas fa-circle';
      }
+   },
+
+   findSlide:function(newIndex){
+      this.photosIdx = newIndex;
    }
 }
 });
